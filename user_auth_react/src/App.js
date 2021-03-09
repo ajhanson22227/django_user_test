@@ -79,7 +79,7 @@ class App extends Component {
     });
   };
 
-  remder() {
+  render() {
     let form;
     switch (this.state.displayed_form) {
       case "login":
