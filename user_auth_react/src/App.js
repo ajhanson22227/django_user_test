@@ -16,7 +16,7 @@ class App extends Component {
 
   componentDidMount() {
     if (this.state.logged_in) {
-      fetch("http://localhost:8000/core/current_user", {
+      fetch("http://localhost:8000/core/current_user/", {
         headers: {
           Authorization: `JWT ${localStorage.getItem("token")}`,
         },
@@ -30,7 +30,7 @@ class App extends Component {
 
   handle_login = (e, data) => {
     e.preventDefault();
-    fetch("http://localhost:8000/token-auth", {
+    fetch("http://localhost:8000/token-auth/", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -50,7 +50,7 @@ class App extends Component {
 
   handle_signup = (e, data) => {
     e.preventDefault();
-    fetch("http://localhost:8000/core/users", {
+    fetch("http://localhost:8000/core/users/", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -85,7 +85,6 @@ class App extends Component {
       case "login":
         form = <LoginForm handle_login={this.handle_login} />;
         break;
-
       case "signup":
         form = <SignupForm handle_signup={this.handle_signup} />;
         break;
@@ -104,7 +103,7 @@ class App extends Component {
         <h3>
           {this.state.logged_in
             ? `Hello, ${this.state.username}`
-            : "Please log in"}
+            : "Please Log In"}
         </h3>
       </div>
     );
