@@ -17,7 +17,7 @@ class UserList(APIView):
     Create a new User. It's called UserList because normalyl wed have a get method here too for retrieving a list of all user objects
     """
     permission_classes = (permissions.AllowAny,)
-    
+
     def post(self, request, format=None):
         serializer = UserSerializerWithToken(data=request.data)
         if serializer.is_valid():
