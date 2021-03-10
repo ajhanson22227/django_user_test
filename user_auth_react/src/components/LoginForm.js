@@ -20,7 +20,7 @@ class LoginForm extends React.Component {
   render() {
     return (
       <form onSubmit={(e) => this.props.handle_login(e, this.state)}>
-        <h4>Log in</h4>
+        <h4>Log In</h4>
         <label htmlFor="username">Username</label>
         <input
           type="text"
@@ -28,15 +28,13 @@ class LoginForm extends React.Component {
           value={this.state.username}
           onChange={this.handle_change}
         />
-
         <label htmlFor="password">Password</label>
         <input
-          type="text"
+          type="password"
           name="password"
           value={this.state.password}
           onChange={this.handle_change}
         />
-
         <input type="submit" />
       </form>
     );
